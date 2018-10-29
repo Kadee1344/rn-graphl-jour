@@ -5,14 +5,14 @@ import gql from 'graphql-tag';
 
 class Posts extends Component {
   render() {
-    const { loading, allPosts } = this.props;
+    const { loading, allPosts, navigation } = this.props;
     if (loading) return null;
     return (
       <View>
         <FlatList
           data={allPosts}
           renderItem={({ item }) => (
-            <Text>{item.title}</Text>
+            <Text onPress={() => navigation.navigate("Post", {id: item.id})}>{item.title}</Text>
           )}
           keyExtractor={item => item.id}
         />
