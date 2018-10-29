@@ -10,11 +10,12 @@ import navStyles from './styles/navStyles';
 import Post from './Post';
 import Posts from './Posts';
 
+
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: "https://api.graph.cool/relay/v1/cjmq0qqyg39rg0147n4k0typm"
+    uri: "https://api.graph.cool/simple/v1/cjmq0qqyg39rg0147n4k0typm"
   }),
   cache
 });
@@ -44,12 +45,7 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  container: {},
 });
 
 export default createStackNavigator({
